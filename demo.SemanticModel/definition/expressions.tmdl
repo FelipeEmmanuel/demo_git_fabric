@@ -1,4 +1,4 @@
-expression base_transacoes = "C:\Users\anali\OneDrive - MLF\Projetos\Git\youtube-20241111-git-github-main\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression base_transacoes = "C:\Users\anali\Lirabr\Projetos - Documentos\Git\youtube-20241111-git-github-main\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 6c58d5df-2099-496f-952f-5338db90bc10
 	queryGroup: Parametros
 
