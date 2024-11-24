@@ -1,11 +1,3 @@
-expression base_transacoes = "C:\Users\anali\OneDrive - MLF\Projetos\Git\youtube-20241111-git-github-main\transacoes.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
-	lineageTag: 6c58d5df-2099-496f-952f-5338db90bc10
-	queryGroup: Parametros
-
-	annotation PBI_NavigationStepName = Navegação
-
-	annotation PBI_ResultType = Text
-
 expression data_inicial = #date(2024, 11, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
 	lineageTag: a39a1b48-ba46-4683-b201-74b325a96372
 	queryGroup: Parametros
