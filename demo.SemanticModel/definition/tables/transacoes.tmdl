@@ -92,14 +92,14 @@ table transacoes
 		queryGroup: Fatos
 		source = ```
 				let
-				    source = Excel.Workbook(
-				        File.Contents(base_transacoes), 
-				        true, 
-				        null
-				    ),
-				    
-				    transacoes_Table = source{[Item="transacoes",Kind="Table"]}[Data],
-				    
+				    Fonte = SharePoint.Files("https://lirabr.sharepoint.com/sites/Projetos", [ApiVersion = 15]),
+				    #"Colunas Reordenadas" = Table.ReorderColumns(Fonte,{"Content", "Name", "Extension", "Date accessed", "Date modified", "Folder Path", "Date created", "Attributes"}),
+				    #"Linhas Filtradas1" = Table.SelectRows(#"Colunas Reordenadas", each [Folder Path] = "https://lirabr.sharepoint.com/sites/Projetos/Shared Documents/Git/youtube-20241111-git-github-main/"),
+				    #"Linhas Filtradas" = Table.SelectRows(#"Linhas Filtradas1", each ([Name] = "transacoes.xlsx")),
+				    #"Personalização Adicionada" = Table.AddColumn(#"Linhas Filtradas", "Conteudo", each Excel.Workbook([Content])),
+				    #"Outras Colunas Removidas" = Table.SelectColumns(#"Personalização Adicionada",{"Conteudo"}),
+				    Conteudo = #"Outras Colunas Removidas"{0}[Conteudo],
+				    transacoes_Table = Conteudo{[Item="transacoes",Kind="Table"]}[Data],
 				    datesRestricted = Table.SelectRows(
 				        transacoes_Table, 
 				        each [Data] >= data_inicial and [Data] <= data_final
