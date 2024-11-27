@@ -1,14 +1,9 @@
 {
   "version": "4.0",
   "datasetReference": {
-    "byPath": null,
-    "byConnection": {
-      "connectionString": "Data Source=powerbi://api.powerbi.com/v1.0/myorg/demo_git_fabric_dev;Initial Catalog=demo_git_direct_lake;Access Mode=readonly;Integrated Security=ClaimsToken",
-      "pbiServiceModelId": null,
-      "pbiModelVirtualServerName": "sobe_wowvirtualserver",
-      "pbiModelDatabaseName": "fed4faf8-5b52-46f5-bf02-9c053076281a",
-      "name": "EntityDataSource",
-      "connectionType": "pbiServiceXmlaStyleLive"
-    }
+    "byPath": {
+      "path": "../demo_git_direct_lake.SemanticModel"
+    },
+    "byConnection": null
   }
 }
